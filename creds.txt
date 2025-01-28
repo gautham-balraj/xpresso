@@ -1,0 +1,21 @@
+api key - 
+9T9lZunVPiDavqvqlODr9yPEN
+
+api key secret - 9T9lZunVPiDavqvqlODr9yPEN
+
+beatr token - AAAAAAAAAAAAAAAAAAAAAOD%2FyAEAAAAAjjokO7tq%2FsNK9INgnSM0HkZ09Ds%3D9GnLdFklz5KGl4CL3BxWLCb1neFqPG3iv47PqXvjWKDc5jAsuc
+
+access token - 
+1746473653288714240-9OVpigfKPiZHSNUyXPOm7OjCqkXprq
+
+access secret -
+YRHf3BQFI55Lah4eDlGWAuiB9JuIyu0s8oyhjSELoPlxp
+
+
+
+(OAuth 2.0 Client ID and Client Secret)
+client id -
+Zk8zcFh3cS1VakdMWXc5cF8xUkc6MTpjaQ
+
+client secret - 
+ljTA7jIrM0rMkXM-6XZzVQhJTonGESsZR0NHnnMBK9dbWbcncE
