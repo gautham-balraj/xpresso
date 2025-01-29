@@ -55,10 +55,13 @@ cd xpresso
    ```
 3. Create a `.env` file in the root directory and add your Twitter API credentials:
    ```env
-   TWITTER_API_KEY=your_api_key
-   TWITTER_API_SECRET=your_api_secret
-   TWITTER_ACCESS_TOKEN=your_access_token
-   TWITTER_ACCESS_SECRET=your_access_secret
+   # API Keys and Tokens
+   ACCESS_TOKEN="YOUR_ACCESS_TOKEN"
+   ACCESS_TOKEN_SECRET="YOUR_ACCESS_TOKEN_SECRET"
+   CONSUMER_KEY="YOUR_CONSUMER_KEY"
+   CONSUMER_SECRET="YOUR_CONSUMER_SECRET"
+   BEARER_TOKEN="YOUR_BEARER_TOKEN"
+   TAVILY_API = "TAVILY_API_KEY"
    ```
 4. Run the FastAPI server:
    ```bash
