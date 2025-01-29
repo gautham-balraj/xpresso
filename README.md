@@ -1,4 +1,3 @@
-Here’s a neat and professional `README.md` for your GitHub repository. It explains how to set up and run the project, and it’s tailored for a project named **Xpresso**.
 
 ---
 
