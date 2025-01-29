@@ -2,11 +2,11 @@ from typing_extensions import Literal
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph import START, END, StateGraph
-from state import SummaryState, SummaryStateInput, SummaryStateOutput
-from prompts import query_writer_instructions, summarizer_instructions, reflection_instructions, x_agent_instructions
+from src.assistant.state import SummaryState, SummaryStateInput, SummaryStateOutput
+from src.assistant.prompts import query_writer_instructions, summarizer_instructions, reflection_instructions, x_agent_instructions
 from langchain_groq import ChatGroq
-from utils.web_sc import TavilySearchAPI
-from utils.x_sc import initialize_twitter_client
+from src.assistant.utils.web_sc import TavilySearchAPI
+from src.assistant.utils.x_sc import initialize_twitter_client
 from dotenv import load_dotenv
 import json
 import os
@@ -100,7 +100,7 @@ def route_research(state: SummaryState) -> Literal["finalize_summary", "web_rese
     print("\033[94mRunning function: route_research\033[0m")
     """ Route the research based on the follow-up query """
 
-    if state.research_loop_count <= 5:
+    if state.research_loop_count <= 1:
         return "web_research"
     else:
         return "finalize_summary" 
@@ -113,10 +113,11 @@ def x_agent(state: SummaryState):
         HumanMessage(content=f"Generate a tweets for the following topic: {state.research_topic} and the following researched Content: {state.running_summary}")
     ])
 
-    return response['parsed']['tweets']
+
+    return {"tweets":response['parsed']['tweets']}
 
     
-def  graph_builde():    
+def graph_builder():    
     print("\033[94mRunning function: graph_builde\033[0m")
     builder = StateGraph(SummaryState, input=SummaryStateInput, output=SummaryStateOutput, )
     builder.add_node("generate_query", generate_query)
