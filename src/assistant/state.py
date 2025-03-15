@@ -11,6 +11,7 @@ class SummaryState:
     research_loop_count: int = field(default=0) # Research loop count
     running_summary: str = field(default=None) # Final report
     tweets : Annotated[list, operator.add] = field(default_factory=list)
+    linkedin_posts : Annotated[list, operator.add] = field(default_factory=list)
 @dataclass(kw_only=True)
 class SummaryStateInput:
     research_topic: str = field(default=None) # Report topic     
@@ -18,3 +19,5 @@ class SummaryStateInput:
 @dataclass(kw_only=True)
 class SummaryStateOutput:
     running_summary: str = field(default=None) # Final report
+    tweets : Annotated[list, operator.add] = field(default_factory=list)
+    linkedin_posts : Annotated[list, operator.add] = field(default_factory=list)
