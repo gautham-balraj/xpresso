@@ -1,0 +1,26 @@
+# .github/workflows/issue-greeting.yml
+
+name: Greet new issues
+
+on:
+  issues:
+    types: [opened]   # fires only when a new issue is created
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write   # needed to post a comment
+
+    steps:
+      - name: Post thank-you comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `👋 Thanks for raising this issue!\n\nWe've received it and will update this shortly. Stay tuned!`
+            })
